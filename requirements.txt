@@ -1,1 +1,4 @@
 Flask==0.11.1
+
+# Flask Extensions
+Flask-Script==2.0.5
