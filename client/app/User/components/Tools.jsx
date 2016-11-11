@@ -1,10 +1,12 @@
 import React, { PropTypes } from 'react';
+import fuzzy from 'fuzzy';
 import 'whatwg-fetch';
 
 import Tool from './Tool';
 
 export default class Tools extends React.Component {
   static propTypes = {
+    searchQuery: PropTypes.string,
     selectedCategory: PropTypes.string,
   }
 
@@ -24,10 +26,15 @@ export default class Tools extends React.Component {
   render() {
     return (
       <div>
-        {this.state.tools
+        {
+          fuzzy.filter(this.props.searchQuery, this.state.tools, {
+            extract: item => item.title,
+          }).map(tool => tool.original)
             .filter(tool => this.props.selectedCategory === null
+                || this.props.selectedCategory === 'All'
                 || this.props.selectedCategory === tool.category)
-            .map((tool) => (<Tool key={tool.title} {...tool} />))}
+            .map((tool) => (<Tool key={tool.title} {...tool} />))
+        }
       </div>
     );
   }
