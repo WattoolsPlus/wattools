@@ -12,6 +12,7 @@ class Tool(db.Model):
     __tablename__ = 'tools'
 
     id = db.Column(db.Integer(), primary_key=True)
+    category = db.Column(db.String(80), nullable=False)
     title = db.Column(db.String(80), nullable=False, unique=True)
     description = db.Column(db.String(512), nullable=False)
     author = db.Column(db.String(50))

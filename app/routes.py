@@ -35,16 +35,56 @@ def get_tools():
 def create_tool():
     data = request.get_json()
 
-    # HACK so far we have no validation, need to do that later
-    tool = Tool(
-        title=data.get('title', ''),
-        description=data.get('description', ''),
-        author=data.get('author', None),
-        author_link=data.get('author_link', None),
-        link=data.get('link', ''),
-        source_link=data.get('source_link', None),
-        state=States.PENDING
-    )
+    try:
+        tool = Tool(
+            title=data['title'],
+            description=data['description'],
+            author=data.get('author', None),
+            author_link=data.get('author_link', None),
+            link=data['link'],
+            source_link=data.get('source_link', None),
+            category=data['category'],
+            state=States.PENDING
+        )
 
-    db.session.add(tool)
-    db.session.commit()
+        db.session.add(tool)
+        db.session.commit()
+
+        return jsonify(
+            id=tool.id,
+            success=True,
+            message='New Tool created!'
+        )
+    except Exception as e:
+        return jsonify(
+            success=False,
+            message=str(e)
+        )
+
+
+@api.route('/judge/', methods=['POST'])
+def judge_tool():
+    data = request.get_json()
+
+    try:
+        id = int(data['id'])
+        state = data['state']
+        auth_token = data['auth_token']
+
+        tool = Tool.query.get(id)
+        tool.state = States(state)
+        db.session.add(tool)
+        db.session.commit()
+
+        return jsonify(
+            id=tool.id,
+            success=True,
+            message='Changed state to {}'.format(state)
+        )
+    except Exception as e:
+        return jsonify(
+            success=False,
+            message=str(e)
+        )
+
+
