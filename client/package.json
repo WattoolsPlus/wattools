@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node $(npm bin)/webpack-dev-server --hot --progress --colors --watch --config webpack.config.js",
-    "build": "node $(npm bin)/webpack --progress --colors",
-    "lint": "node $(npm bin)/eslint"
+    "start": "$(npm bin)/webpack-dev-server --hot --progress --colors --watch --config webpack.config.js",
+    "build": "$(npm bin)/webpack --progress --colors",
+    "lint": "$(npm bin)/eslint --ext jsx --ext js"
   },
   "author": "",
   "license": "ISC",
@@ -32,10 +32,7 @@
     "eslint-plugin-jsx-a11y": "^2.1.0",
     "eslint-plugin-react": "^6.1.2",
     "html-webpack-plugin": "^2.22.0",
-    "react-collapse": "^2.3.3",
-    "react-height": "^2.1.1",
     "react-hot-loader": "^1.3.0",
-    "react-motion": "^0.4.5",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"

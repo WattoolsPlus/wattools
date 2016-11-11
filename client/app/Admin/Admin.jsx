@@ -26,22 +26,6 @@ export default class Admin extends React.Component {
   }
 
   render() {
-    function renderTools() {
-      return this.state.tools.map((tool) => (
-        <tr key={tool.id}>
-          <td>{tool.title}</td>
-          <td>{tool.category}</td>
-          <td>{tool.description}</td>
-          <td>{tool.link}</td>
-          <td>{tool.author}</td>
-          <td>{tool.author_link}</td>
-          <td>{tool.source_link}</td>
-          <td> <Button onClick={() => this.handleApprove(tool.id)}>Approve</Button></td>
-          <td> <Button onClick={() => this.handleReject(tool.id)}>Reject</Button></td>
-        </tr>
-      ));
-    }
-
     return (
       <Table striped bordered hover>
         <thead>
@@ -56,7 +40,19 @@ export default class Admin extends React.Component {
           </tr>
         </thead>
         <tbody>
-          { renderTools() }
+          { () => this.state.tools.map((tool) => (
+            <tr key={tool.id}>
+              <td>{tool.title}</td>
+              <td>{tool.category}</td>
+              <td>{tool.description}</td>
+              <td>{tool.link}</td>
+              <td>{tool.author}</td>
+              <td>{tool.author_link}</td>
+              <td>{tool.source_link}</td>
+              <td> <Button onClick={() => this.handleApprove(tool.id)}>Approve</Button></td>
+              <td> <Button onClick={() => this.handleReject(tool.id)}>Reject</Button></td>
+            </tr>
+          )) }
         </tbody>
       </Table>
     );

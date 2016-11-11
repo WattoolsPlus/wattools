@@ -6,7 +6,7 @@ export default class Tool extends React.Component {
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     author_link: PropTypes.string,
-    quickDescription: PropTypes.string.isRequired,
+    quickDescription: PropTypes.string,
     description: PropTypes.string.isRequired,
     source_link: PropTypes.string,
     link: PropTypes.string.isRequired,

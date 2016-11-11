@@ -1,11 +1,11 @@
-import React, {PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 import 'whatwg-fetch';
 
 import Tool from './Tool';
 
 export default class Tools extends React.Component {
   static propTypes = {
-    selectedCategory: PropTypes.string.isRequired,
+    selectedCategory: PropTypes.string,
   }
 
   constructor(props) {

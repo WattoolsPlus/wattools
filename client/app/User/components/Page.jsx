@@ -15,26 +15,16 @@ export default class Page extends React.Component {
     };
   }
 
-  handleClickCategory(category) {
-    let selectedCategory;
-    if (category === this.state.selectedCategory) {
-      selectedCategory = null;
-    } else {
-      selectedCategory = category;
-    }
-    this.setState({
-      selectedCategory,
-    });
-  }
-
   render() {
     return (
       <Grid>
         <Row>
           <Col md={3}>
             <Sidebar
-              onClickCategory={this.handleClickCategory}
               selectedCategory={this.state.selectedCategory}
+              onClickCategory={category => this.setState({
+                selectedCategory: (category === this.state.selectedCategory) ? null : category,
+              })}
             />
           </Col>
           <Col md={9}>

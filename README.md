@@ -30,7 +30,10 @@ export DATABASE_URL="postgresql://localhost/wattools_development"
 2. `python manage.py db upgrade` to update the db using the migration
 
 ## Frontend development
-9. `cd` into the `client` folder
+0. `cd` into the `client` folder
 1. run `npm install` to install the dependencies
 2. run `npm start` to start a dumb server to serve the frontend to `localhost:8080`
+
+### Linting
+This project uses `eslint` for its linting. Run `npm run lint .` to test the project's files. Setup your local linter to point to `.eslintrc.json` for the proper settings.
 

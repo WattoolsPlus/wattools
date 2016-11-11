@@ -33,4 +33,4 @@ ReactDOM.render((
     <Route path="submit" component={Submit} />
   </Router>
 ), document.getElementById('app'))
-/*eslint-enable */
+/* eslint-enable */
