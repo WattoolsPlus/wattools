@@ -13,7 +13,7 @@ export default class Tools extends React.Component {
   }
 
   fetchTools() {
-    fetch(`https://api.myjson.com/bins/19hq0`).then(response => {
+    fetch(`https://api.myjson.com/bins/2ipt4`).then(response => {
       return response.json();
     }).then(json => {
       this.setState({ tools: json });
@@ -23,8 +23,9 @@ export default class Tools extends React.Component {
   render() {
     return (
       <div>
-        { this.state.tools.map((tool, index) =>
-          ( <Tool key={tool.title} title={tool.title} description ={tool.description}/> )) }
+        { this.state.tools.filter(tool =>
+          this.props.selectedCategory === null || this.props.selectedCategory === tool.category )
+          .map((tool, index) => ( <Tool key={tool.title} { ...tool } /> )) }
       </div>
     );
   }

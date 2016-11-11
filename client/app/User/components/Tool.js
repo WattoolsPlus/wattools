@@ -12,14 +12,15 @@ export default class Tool extends React.Component {
     return (
       <Panel className='' onClick={ () => this.setState({ open: !this.state.open })}>
         <div className=''>
-          <span className='' href={ this.props.link }>{ this.props.title }</span>
-          <span className='' href={ this.props.authorlink }> by { this.props.author }</span>
+          <a className='' href={ this.props.link }>{ this.props.title }</a>
+          <span> by </span>
+          <a className='' href={ this.props.author_link }>{ this.props.author }</a>
         </div>
         <div className=''>{ this.props.quickDescription }</div>
-        <a className='' href={ this.props.sourcelink }>source</a>
         <Panel collapsible expanded={ this.state.open }>
           { this.props.description }
         </Panel>
+        <a className='' href={ this.props.source_link }>source</a>
       </Panel>
     );
   }
