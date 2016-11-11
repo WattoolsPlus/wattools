@@ -18,8 +18,15 @@ export default class Admin extends React.Component {
     });
   }
 
-  render(){
+  handleApprove = (id) => {
+    this.fetchTools();
+  }
 
+  handleReject = (id) => {
+    this.fetchTools();
+  }
+
+  render(){
     return (
       <Table striped bordered hover>
         <thead>
@@ -35,7 +42,7 @@ export default class Admin extends React.Component {
         </thead>
         <tbody>
           {
-            this.state.tools.map(function(tool, i) {
+            this.state.tools.map((tool, i) => {
               return <tr key={tool.id}>
                 <td>{tool.title}</td>
                 <td>{tool.category}</td>
@@ -44,8 +51,8 @@ export default class Admin extends React.Component {
                 <td>{tool.author}</td>
                 <td>{tool.author_link}</td>
                 <td>{tool.source_link}</td>
-                <td> <Button>Approve</Button></td>
-                <td> <Button>Reject</Button></td>
+                <td> <Button onClick={() => this.handleApprove(tool.id)}>Approve</Button></td>
+                <td> <Button onClick={() => this.handleReject(tool.id)}>Reject</Button></td>
               </tr>;
             })
           }
