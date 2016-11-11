@@ -24,6 +24,7 @@ class Tool(db.Model):
     def serialize(self):
         return {
             'id': self.id,
+            'category': self.category,
             'title': self.title,
             'description': self.description,
             'author': self.author,
