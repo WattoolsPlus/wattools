@@ -20,8 +20,14 @@ def home():
 # ##############################
 @api.route('/tools/')
 def get_tools():
+    state = request.args.get('state', None)
+    if state:
+        tools = Tool.query.filter_by(state=States(state)).all()
+    else:
+        tools = Tool.query.all()
+
     return jsonify(
-        data=[tool.serialize() for tool in Tool.query.all()]
+        data=[tool.serialize() for tool in tools]
     )
 
 

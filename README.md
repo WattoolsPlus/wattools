@@ -2,13 +2,29 @@
 Wattools+
 
 ## Flask development
-0. Make sure you have Python 2.7 and virtualenv installed on your local machine
-1. `virtualenv venv`
-2. `source venv/bin/activate`
-3. `pip install -r requirements.txt`
+
+### Initial setup (should only do once)
+1. Install Postgres on your local
+2. `touch .env` with
+```
+source venv/bin/activate
+export WATTOOLS_ENV="development"
+export DATABASE_URL="postgresql://localhost/wattools_development"
+```
+
+3. Make sure you have Python 2.7 and virtualenv installed on your local machine
+4. `virtualenv venv`
+5. `createdb wattools_development`
+6. `python manage.py create_db`
+
+### Normal development
+
+1. `source venv/bin/activate`
+2. `pip install -r requirements.txt`
+3. `python manage.py shell` if you want an interactive shell to test
 
 ## Frontend development
-0. `cd` into the `client` folder
+9. `cd` into the `client` folder
 1. run `npm install` to install the dependencies
 2. run `npm start` to start a dumb server to serve the frontend to `localhost:8080`
 
