@@ -1,22 +1,48 @@
-import React from 'react';
-import {Nav, NavItem} from 'react-bootstrap';
+import React, { PropTypes } from 'react';
+import { Nav, NavItem } from 'react-bootstrap';
 
 import './css/Sidebar.css';
 
 export default class Sidebar extends React.Component {
+  static propTypes = {
+    onClickCategory: PropTypes.func.isRequired,
+    selectedCategory: PropTypes.string,
+  };
+
   render() {
     const categories = ['General', 'Course Selection', 'JobMine', 'Learn', 'GRT', 'Class Helpers', 'Guides', 'Developers', 'Dead'];
     return (
       <div className='sidebar'>
-        WatTools
-        <Nav bsStyle='pills' stacked>
+        <div className='title'>
+          WatTools
+        </div>
+
+        {/*A collection of tools for University of Waterloo students, by University of Waterloo students.*/}
+
+        <Nav
+          bsStyle='pills'
+          stacked
+          activeKey={this.props.selectedCategory}
+          onSelect={this.props.onClickCategory}
+        >
           {categories.map((category, index) => {
             return (
-              <NavItem key={index}>
+              <NavItem key={index} eventKey={category}>
                 {category}
               </NavItem>
             );
           })}
+        </Nav>
+
+        <div className='divider' />
+
+        <Nav
+          bsStyle='pills'
+          stacked
+        >
+          <NavItem href='/submit'>
+            Submit tool
+          </NavItem>
         </Nav>
       </div>
     );

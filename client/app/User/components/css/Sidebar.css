@@ -1,3 +1,14 @@
 .sidebar {
-  background: #EEE8D5;
+}
+
+.sidebar .divider {
+  height: 20px;
+}
+
+.title {
+  font-family: "Open Sans", sans-serif;
+  color: #2c5700;
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
 }
