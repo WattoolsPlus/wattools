@@ -1,11 +1,19 @@
 import React from 'react';
 import Collapse from 'react-collapse';
 
-import './css/Tools.css';
+import Tool from './Tool';
 
 export default class Tools extends React.Component {
-  render() {
-    const tools = [
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      tools: this.fetchTools()
+    };
+  }
+
+  fetchTools() {
+    return [
       {
         title: 'UWaterloo Subreddit',
         description: 'A subreddit for the UWaterloo community.',
@@ -15,18 +23,13 @@ export default class Tools extends React.Component {
         description: 'Android app which finds the shortest path between two floors in two buildings on campus that does not go outside. aaaaa aaaaaaa aaaaaaaaa ',
       },
     ];
+  }
 
+  render() {
     return (
-      <div className='tools-collapsed-description'>
-        {
-          tools.map((tool, index) => (
-            <div key={index} className='collapsedDescription'>
-              {tool.title} - {tool.description}
-              <Collapse key={index} isOpened={true}>
-              </Collapse>
-            </div>
-          ))
-        }
+      <div>
+        { this.state.tools.map((tool, index) =>
+          ( <Tool key={tool.title} title={tool.title} description ={tool.description}/> )) }
       </div>
     );
   }
