@@ -23,6 +23,10 @@ export DATABASE_URL="postgresql://localhost/wattools_development"
 2. `pip install -r requirements.txt`
 3. `python manage.py shell` if you want an interactive shell to test
 
+### Migration
+1. `python manage.py db migrate` to create migration file
+2. `python manage.py db upgrade` to update the db using the migration
+
 ## Frontend development
 9. `cd` into the `client` folder
 1. run `npm install` to install the dependencies
