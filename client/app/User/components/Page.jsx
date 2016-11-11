@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Col } from 'react-bootstrap';
 
 import Sidebar from './Sidebar';
 import Tools from './Tools';
@@ -17,20 +17,18 @@ export default class Page extends React.Component {
 
   render() {
     return (
-      <Grid>
-        <Row>
-          <Col md={3}>
-            <Sidebar
-              selectedCategory={this.state.selectedCategory}
-              onClickCategory={category => this.setState({
-                selectedCategory: (category === this.state.selectedCategory) ? null : category,
-              })}
-            />
-          </Col>
-          <Col md={9}>
-            <Tools selectedCategory={this.state.selectedCategory} />
-          </Col>
-        </Row>
+      <Grid className="container">
+        <Col md={3}>
+          <Sidebar
+            selectedCategory={this.state.selectedCategory}
+            onClickCategory={category => this.setState({
+              selectedCategory: (category === this.state.selectedCategory) ? null : category,
+            })}
+          />
+        </Col>
+        <Col md={9}>
+          <Tools selectedCategory={this.state.selectedCategory} />
+        </Col>
       </Grid>
     );
   }

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Nav, NavItem } from 'react-bootstrap';
+import { Panel, Nav, NavItem } from 'react-bootstrap';
 
 import './css/Sidebar.css';
 
@@ -28,11 +28,12 @@ export default class Sidebar extends React.Component {
       'Dead',
     ];
 
+    const title = (
+      <h1 className={'text-center'}>WatTools</h1>
+    );
+
     return (
-      <div className={'sidebar'}>
-        <div className={'title'}>
-          WatTools
-        </div>
+      <Panel header={title} >
 
         {/* A collection of tools for University of Waterloo students,
             by University of Waterloo students.*/}
@@ -60,7 +61,7 @@ export default class Sidebar extends React.Component {
             Submit a new tool
           </NavItem>
         </Nav>
-      </div>
+      </Panel>
     );
   }
 }

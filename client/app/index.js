@@ -27,7 +27,7 @@ class App extends React.Component {
 
 ReactDOM.render((
   <Router history={browserHistory}>
-    <Route path="/" component={App} />
+    <Route path="/" component={User} />
     <Route path="user" component={User} />
     <Route path="admin" component={Admin} />
     <Route path="submit" component={Submit} />
