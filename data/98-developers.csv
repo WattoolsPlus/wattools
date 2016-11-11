@@ -1,0 +1,3 @@
+uWaterloo API Python Module	Developer-focused	Thin Python wrapper for the University of Waterloo Open Data API at api.uwaterloo.ca. Install using `pip install uwaterlooapi`	https://pypi.python.org/pypi/uwaterlooapi	Albert O'Connor	http://albertoconnor.ca/	https://bitbucket.org/amjoconn/uwaterlooapi	approved
+Waterloo Region Python Group	Developer-focused	Website for the Waterloo Regional Python users group.	http://watpy.ca/	Albert O'Connor	https://bitbucket.org/amjoconn	https://bitbucket.org/amjoconn/watpy/overview	approved
+University of Waterloo API	Developer-focused	Official University of Waterloo API	http://api.uwaterloo.ca	Kartik Talwar			approved

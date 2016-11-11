@@ -1,0 +1,272 @@
+{"General":[
+    {
+      "Name": {
+        "text": "WatWhenWhere",
+        "url": "http://watwhenwhere.ca"
+      },
+      "Description": {
+        "text": "A web app that allows students to find free times to hang out with friends."
+      },
+      "Source Code": {
+        "text": "Github",
+        "url": "https://github.com/nathan4/watwhenwhere"
+      },
+      "Authors": {
+        "text": "Nathaniel Woodthorpe, Edward Lu, Sarth Frey, Shakeel Rao"
+      }
+    },
+    {
+      "Name": {
+        "text": "Weatherloo - Chrome extension",
+        "url": "https://github.com\/neivin\/weatherloo\/releases\/tag\/v1.0"
+      },
+      "Description": {
+        "text": "A simple chrome extension that displays weather and 7-day forecast information. Boasting a beautifully clean user interface, Weatherloo uses the UW Weather Station and OpenWeatherMap to satisfy your weather needs."
+      },
+      "Source Code": {
+        "text": "Github",
+        "url": "https://github.com\/neivin\/weatherloo"
+      },
+      "Author": {
+        "text": "Neivin Mathew"
+      }
+    },
+    {
+      "Name": {
+        "text": "You Want Food",
+        "url": "https://projects.zacharyseguin.ca/you-want-food/"
+      },
+      "Description": {
+        "text": "Displays which food outlets are currently open, their hours and menu.\nSignup to receive the daily menu by email."
+      },
+      "Source Code": {
+        "text": "GitHub",
+        "url": "https://github.com\/zachomedia\/you-want-food"
+      },
+      "Author": {
+        "text": "Zachary Seguin",
+        "url": "https://zacharyseguin.ca"
+      }
+    },
+    {
+      "Name": {
+        "text": "WATisRain (Android)",
+        "url": "https://play.google.com\/store\/apps\/details?id=com.lucky.watisrain"
+      },
+      "Description": {
+        "text": "WATisRain is an Android app to help you navigate the buildings of the University of Waterloo without going outside (ie, by going through the various tunnels between buildings). This may prove to be useful when it's raining outside, or if it's freezing cold."
+      },
+      "Source Code": {
+        "text": "github",
+        "url": "https://github.com\/luckytoilet\/WATisRain"
+      },
+      "Author": {
+        "text": "Bai Li",
+        "url": "http://luckytoilet.wordpress.com\/"
+      }
+    },
+    {
+      "Name": {
+        "text": "WATisRain (iOS)",
+        "url": "https://itunes.apple.com\/us\/app\/watisrain\/id1021882430"
+      },
+      "Description": {
+        "text": "WATisRain is an iOS app to help you navigate the buildings of the University of Waterloo without going outside (ie, by going through the various tunnels between buildings). This may prove to be useful when it's raining outside, or if it's freezing cold."
+      },
+      "Source Code": {
+        "text": "github",
+        "url": "https://github.com\/luckytoilet\/WATisRain"
+      },
+      "Author": {
+        "text": "Bai Li",
+        "url": "http://luckytoilet.wordpress.com\/"
+      }
+    },
+
+    {
+      "Name": {
+        "text": "OMGUW Reader",
+        "url": "https://play.google.com\/store\/apps\/details?id=com.romantymchyk.omguwreader"
+      },
+      "Description": {
+        "text": "The OMGUW Reader Android app is an easy way to browse University of Waterloo's favourite blog."
+      },
+      "Author": {
+        "text": "Roman Tymchyk"
+      }
+    },
+    {
+      "Name": {
+        "text": "Waterloo GPS",
+        "url": "https://github.com\/yingted\/EDTALKS"
+      },
+      "Description": {
+        "text": "Android app which finds the shortest path between two floors in two buildings on campus that does not go outside. Created at EngHack 2013. "
+      },
+      "Source Code": {
+        "text": "Fork me on Github",
+        "url": "https://github.com\/yingted\/EDTALKS"
+      },
+      "Download": {
+        "text": "EDTALKS.apk",
+        "url": "https://db.tt\/vBkMVi7G"
+      }
+    },
+    {
+      "Name": {
+        "text": "WatMine",
+        "url": "https://chrome.google.com\/webstore\/detail\/watmine\/oehnjmhgpdbjiipgeahdfmmbnldakogp"
+      },
+      "Description": {
+        "text": "WatMine is a Chrome extension which performs several functions. Notable ones include auto-login to all CAS sites including LEARN, feds.ca, and JobMine. One-click WatCard and XAS balances with low balance alerts. One-click LEARN activity list from the Chrome toolbar and the option to expand LEARN pages to fill the screen"
+      },
+      "Author": {
+        "text": "Mark Furneaux"
+      },
+      "Download": {
+        "text": "WatMine",
+        "url": "https://chrome.google.com\/webstore\/detail\/watmine\/oehnjmhgpdbjiipgeahdfmmbnldakogp"
+      }
+    },
+    {
+      "Name": {
+        "text": "UW Menu",
+        "url": "http://uwmenu.com"
+      },
+      "Description": {
+        "text": "Weekly menus for the University of Waterloo's on-campus eateries."
+      },
+      "Source Code": {
+        "text": "GitHub",
+        "url": "https://github.com\/alykhank\/FoodMenu"
+      },
+      "Author": {
+        "text": "Alykhan Kanji",
+        "url": "http://alykhan.com"
+      }
+    },
+    {
+      "Name": {
+        "text": "WatApp",
+        "url": "https://play.google.com\/store\/apps\/details?id=watapp.main"
+      },
+      "Description": {
+        "text": "WatApps is an unofficial Android App created by UW staff and students with partial funding from Google. "
+      },
+      "Source Code": {
+        "text": "Waterloo",
+        "url": "http://watapp.cs.uwaterloo.ca\/src\/"
+      },
+      "Author": {
+        "text": "Charlie Clarke",
+        "url": "http://plg.uwaterloo.ca\/~claclark\/"
+      }
+    },
+    {
+      "Name": {
+        "text": "wat do?",
+        "url": "http://www.wat-do.com\/"
+      },
+      "Description": {
+        "text": "A web utility that allows you to easily manage assignments and due dates."
+      },
+      "Authors": {
+        "text": "Jacob Wirth, Justin Li",
+        "url": "http://frustra.org\/"
+      },
+      "Source Code": {
+        "text": "github",
+        "url": "https://github.com\/Frustra\/wat-do"
+      }
+    },
+    {
+      "Name": {
+        "text": "Weatherloo",
+        "url": "http://itunes.apple.com\/WebObjects\/MZStore.woa\/wa\/viewSoftware?id=505098377&mt=8"
+      },
+      "Description": {
+        "text": "Weatherloo fetches and displays data from the University of Waterloo Weather Station (weather.uwaterloo.ca)."
+      },
+      "Author": {
+        "text": "Connor Cimowsky",
+        "url": "http://connorcimowsky.com\/"
+      }
+    },
+    {
+      "Name": {
+        "text": "UWaterloo Subreddit",
+        "url": "http://www.reddit.com\/r\/uwaterloo"
+      },
+      "Description": {
+        "text": "News from around campus and other discussions."
+      }
+    },
+    {
+      "Name": {
+        "text": "OMG UW",
+        "url": "http://www.omguw.com\/"
+      },
+      "Description": {
+        "text": "Have one of those moments you've got to share? Got a secret you need to get off your chest? Hear something on campus so stupid it needs to be on the internet?\nThese are OMG moments.\nOMG UW is a blog dedicated to sharing these precious moments at the University of Waterloo. Inspired by FML, grouphug, PostSecret, Overheard at Western and more, this is the place to share your OMG moments easily and anonymously.\nHave fun."
+      }
+    },
+    {
+      "Name": {
+        "text": "Waterloo Tools",
+        "url": "https://uwaterloo.xyz"
+      },
+      "Source Code": {
+        "text": "github",
+        "url": "https://github.com\/vikstrous\/WatTools"
+      },
+      "Author": {
+        "text": "Viktor Stanchev",
+        "url": "http://viktorstanchev.com"
+      },
+      "Description": {
+        "text": "A collection of tools for University of Waterloo students made by other students."
+      },
+      "Source Code:": {
+        "text": "github",
+        "url": "https://github.com/wattools/WatTools"
+      }
+    },
+    {
+      "Name": {
+        "text": "WatBalance",
+        "url": "https://github.com/xbhatnag/watbalance"
+      },
+      "Description": {
+        "text": "Android app that keep track of your WatCard balance and transaction history. Replacement for UWallet. More features. Better design."
+      },
+      "Source Code": {
+        "text": "github",
+        "url": "https://github.com/xbhatnag/watbalance"
+      },
+      "Download": {
+        "text": "Google Play",
+        "url": "https://play.google.com/store/apps/details?id=com.cg.watbalance"
+      },
+      "Author": {
+        "text": "Xyan Bhatnagar",
+        "url": "http://xyanbhatnagar.xyz/"
+      }
+    },
+    {
+      "Name": {
+        "text": "UW Parking",
+        "url": "https://play.google.com/store/apps/details?id=com.YC2010.UWparking"
+      },
+      "Description": {
+        "text": "A simple android app for UWaterloo students to found out about current parking space of each parking lot among the campus"
+      },
+      "Source Code": {
+        "text": "Github",
+        "url": "https://github.com/IYCI/UW_Parking"
+      },
+      "Author": {
+        "text": "Jason Feng"
+      }
+    }
+  ]
+}
