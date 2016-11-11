@@ -1,14 +1,5 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Page from './Page';
 
-var HelloWorld = React.createClass({
-  render: function(){
-    return (
-      <div>
-        Hello World!
-      </div>
-    )
-  }
-});
-
-ReactDOM.render(<HelloWorld />, document.getElementById('app'));
+ReactDOM.render(<Page />, document.getElementById('app'));
