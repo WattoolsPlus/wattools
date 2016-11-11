@@ -37,7 +37,7 @@ export default class Page extends React.Component {
             />
           </Col>
           <Col md={9}>
-            <Tools />
+            <Tools selectedCategory={ this.state.selectedCategory }/>
           </Col>
         </Row>
       </Grid>
