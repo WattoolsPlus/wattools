@@ -6,12 +6,35 @@ import {Grid, Row, Col} from 'react-bootstrap';
 import './css/Page.css';
 
 export default class Page extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      selectedCategory: null,
+    };
+  }
+
+  handleClickCategory = (category) => {
+    let selectedCategory;
+    if (category === this.state.selectedCategory) {
+      selectedCategory = null;
+    } else {
+      selectedCategory = category;
+    }
+    this.setState({
+      selectedCategory,
+    });
+  };
+
   render() {
     return (
       <Grid>
         <Row>
           <Col md={3}>
-            <Sidebar />
+            <Sidebar
+              onClickCategory={this.handleClickCategory}
+              selectedCategory={this.state.selectedCategory}
+            />
           </Col>
           <Col md={9}>
             <Tools />
