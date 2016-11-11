@@ -5,6 +5,7 @@ Wattools+
 
 ### Initial setup (should only do once)
 1. Install Postgres on your local
+2. Install autoenv (https://github.com/kennethreitz/autoenv)
 2. `touch .env` with
 ```
 source venv/bin/activate
@@ -14,6 +15,7 @@ export DATABASE_URL="postgresql://localhost/wattools_development"
 
 3. Make sure you have Python 2.7 and virtualenv installed on your local machine
 4. `virtualenv venv`
+5. `cd .. && cd wattools`
 5. `createdb wattools_development`
 6. `python manage.py create_db`
 
