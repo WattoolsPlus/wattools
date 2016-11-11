@@ -9,7 +9,6 @@ export default class Tool extends React.Component {
   }
 
   render() {
-    console.log (this.state.open);
     return (
       <Panel className='' onClick={ () => this.setState({ open: !this.state.open })}>
         <div className=''>
@@ -18,11 +17,9 @@ export default class Tool extends React.Component {
         </div>
         <div className=''>{ this.props.quickDescription }</div>
         <a className='' href={ this.props.sourcelink }>source</a>
-        <Collapse in={this.state.open}>
-          <Well>
-            { this.props.description }
-          </Well>
-        </Collapse>
+        <Panel collapsible expanded={ this.state.open }>
+          { this.props.description }
+        </Panel>
       </Panel>
     );
   }
