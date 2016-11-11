@@ -86,5 +86,3 @@ def judge_tool():
             success=False,
             message=str(e)
         )
-
-
