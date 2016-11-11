@@ -1,3 +1,4 @@
+/* eslint-disable */
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: [
@@ -13,8 +14,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.css$/, loader: 'style-loader!css-loader' },
-      { test: /\.js?$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+      { test: /\.jsx?$/, loaders: ['react-hot', 'babel', 'babel-loader'], exclude: /node_modules/ },
     ]
   },
 
@@ -24,5 +24,10 @@ module.exports = {
       filename: 'index.html',
       inject: 'body'
     })
-  ]
+  ],
+
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  }
 };
+/* eslint-enable */
