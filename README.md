@@ -6,3 +6,9 @@ Wattools+
 1. `virtualenv venv`
 2. `source venv/bin/activate`
 3. `pip install -r requirements.txt`
+
+## Frontend development
+0. `cd` into the `client` folder
+1. run `npm install` to install the dependencies
+2. run `npm start` to start a dumb server to serve the frontend to `localhost:8080`
+
