@@ -41,7 +41,7 @@ export default class Sidebar extends React.Component {
           stacked
         >
           <NavItem href='/submit'>
-            Submit tool
+            Submit a new tool
           </NavItem>
         </Nav>
       </div>
