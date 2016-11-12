@@ -39,6 +39,7 @@ api = Blueprint('api', __name__)
 @main.route('/')
 @main.route('/submit')
 def home():
+    print static_assets_path
     return main.send_static_file('index.html');
 
 @main.route('/admin')
