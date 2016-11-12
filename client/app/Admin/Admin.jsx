@@ -20,7 +20,7 @@ export default class Admin extends React.Component {
   }
 
   handleApprove(id, state) {
-    fetch('http://wattools-stage.herokuapp.com/api/judge', {
+    fetch('http://wattools-stage.herokuapp.com/api/judge/', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
@@ -30,8 +30,7 @@ export default class Admin extends React.Component {
         state: state,
         auth_token: "abcdefg"
       })
-    });
-    this.fetchTools();
+    }).then(() => this.fetchTools());
   }
 
   render() {
