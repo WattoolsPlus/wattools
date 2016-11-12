@@ -1,19 +1,25 @@
-from flask import Blueprint, jsonify, request
+from flask import Flask, Blueprint, jsonify, request
 from database import db
 from tools.models import Tool
 from tools.models import States
+from flask.ext.cors import CORS
+import os
 
 main = Blueprint('main', __name__)
 api = Blueprint('api', __name__)
 
+dirname=os.path.dirname
+static_assets_path = os.path.join(dirname(dirname(__file__)), os.path.join('client', 'dist'))
+app = Flask(__name__, static_folder=static_assets_path)
+CORS(app)
 
 ################################
 #               MAIN
 # ##############################
 @main.route('/')
-def home():
-    return "Hello Wattools!"
-
+def root():
+    print static_assets_path
+    return app.send_static_file("index.html")
 
 ################################
 #               API
