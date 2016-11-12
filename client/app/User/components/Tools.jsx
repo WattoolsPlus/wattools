@@ -18,9 +18,9 @@ export default class Tools extends React.Component {
   }
 
   fetchTools() {
-    fetch('https://api.myjson.com/bins/2ipt4')
+    fetch('http://wattools-stage.herokuapp.com/api/tools/')
         .then(response => response.json())
-        .then(json => this.setState({ tools: json }));
+        .then(json => this.setState({ tools: json.data }));
   }
 
   render() {
