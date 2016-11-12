@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "$(npm bin)/webpack-dev-server --hot --progress --colors --watch --config webpack.config.js",
-    "build": "$(npm bin)/webpack --progress --colors",
+    "build": "$(npm bin)/webpack --watch --progress --colors --config webpack.config.js",
     "lint": "$(npm bin)/eslint --ext jsx --ext js"
   },
   "author": "",
