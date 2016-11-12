@@ -20,18 +20,17 @@ export default class Admin extends React.Component {
   }
 
   handleApprove(id, state) {
-    fetch('http://wattools-stage.herokuapp.com/api/judge', {
+    fetch('http://wattools-stage.herokuapp.com/api/judge/', {
       method: 'post',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        id,
-        state,
-        auth_token: 'abcdefg',
-      }),
-    });
-    this.fetchTools();
+        id: id,
+        state: state,
+        auth_token: "abcdefg"
+      })
+    }).then(() => this.fetchTools());
   }
 
   render() {
@@ -62,12 +61,12 @@ export default class Admin extends React.Component {
                 <td>{tool.author_link}</td>
                 <td>{tool.source_link}</td>
                 <td>
-                  <Button onClick={() => this.handleApprove(tool.id, 'approved')}>
+                  <Button bsStyle="success" onClick={() => this.handleApprove(tool.id, 'approved')}>
                     Approve
                   </Button>
                 </td>
                 <td>
-                  <Button onClick={() => this.handleApprove(tool.id, 'rejected')}>
+                  <Button bsStyle="danger" onClick={() => this.handleApprove(tool.id, 'rejected')}>
                     Reject
                 </Button>
                 </td>
