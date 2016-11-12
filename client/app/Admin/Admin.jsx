@@ -10,18 +10,27 @@ export default class Admin extends React.Component {
   }
 
   fetchTools() {
-    fetch('https://api.myjson.com/bins/23poo')
+    fetch('http://wattools-stage.herokuapp.com/api/tools?state=pending')
       .then(response => response.json())
       .then(json => {
-        this.setState({ tools: json });
+        console.log("fetch done");
+        console.log(json.data);
+        this.setState({ tools: json.data });
       });
   }
 
-  handleApprove() {
-    this.fetchTools();
-  }
-
-  handleReject() {
+  handleApprove(id, state) {
+    fetch('http://wattools-stage.herokuapp.com/api/judge', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        id: id,
+        state: state,
+        auth_token: "abcdefg"
+      })
+    });
     this.fetchTools();
   }
 
@@ -37,22 +46,26 @@ export default class Admin extends React.Component {
             <th>Author</th>
             <th>Author Link</th>
             <th>Source Link</th>
+            <th>Approve</th>
+            <th>Reject</th>
           </tr>
         </thead>
         <tbody>
-          { () => this.state.tools.map((tool) => (
-            <tr key={tool.id}>
-              <td>{tool.title}</td>
-              <td>{tool.category}</td>
-              <td>{tool.description}</td>
-              <td>{tool.link}</td>
-              <td>{tool.author}</td>
-              <td>{tool.author_link}</td>
-              <td>{tool.source_link}</td>
-              <td> <Button onClick={() => this.handleApprove(tool.id)}>Approve</Button></td>
-              <td> <Button onClick={() => this.handleReject(tool.id)}>Reject</Button></td>
-            </tr>
-          )) }
+          {
+            this.state.tools.map((tool) => {
+              return <tr key={tool.id}>
+                <td>{tool.title}</td>
+                <td>{tool.category}</td>
+                <td>{tool.description}</td>
+                <td>{tool.link}</td>
+                <td>{tool.author}</td>
+                <td>{tool.author_link}</td>
+                <td>{tool.source_link}</td>
+                <td> <Button onClick={() => this.handleApprove(tool.id, "approved")}>Approve</Button></td>
+                <td> <Button onClick={() => this.handleApprove(tool.id, "rejected")}>Reject</Button></td>
+              </tr>
+            })
+          }
         </tbody>
       </Table>
     );
