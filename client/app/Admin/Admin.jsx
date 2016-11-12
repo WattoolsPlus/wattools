@@ -61,12 +61,12 @@ export default class Admin extends React.Component {
                 <td>{tool.author_link}</td>
                 <td>{tool.source_link}</td>
                 <td>
-                  <Button onClick={() => this.handleApprove(tool.id, 'approved')}>
+                  <Button bsStyle="success" onClick={() => this.handleApprove(tool.id, 'approved')}>
                     Approve
                   </Button>
                 </td>
                 <td>
-                  <Button onClick={() => this.handleApprove(tool.id, 'rejected')}>
+                  <Button bsStyle="danger" onClick={() => this.handleApprove(tool.id, 'rejected')}>
                     Reject
                 </Button>
                 </td>
