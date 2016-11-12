@@ -48,6 +48,10 @@ def admin():
 def bundle():
     return main.send_static_file('bundle.js');
 
+@main.route('/test')
+def hello():
+    return "Hello World!"
+
 ################################
 #               API
 # ##############################
