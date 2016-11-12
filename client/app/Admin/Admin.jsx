@@ -13,7 +13,7 @@ export default class Admin extends React.Component {
     fetch('http://wattools-stage.herokuapp.com/api/tools?state=pending')
       .then(response => response.json())
       .then(json => {
-        console.log("fetch done");
+        console.log('fetch done');
         console.log(json.data);
         this.setState({ tools: json.data });
       });
@@ -23,13 +23,13 @@ export default class Admin extends React.Component {
     fetch('http://wattools-stage.herokuapp.com/api/judge', {
       method: 'post',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        id: id,
-        state: state,
-        auth_token: "abcdefg"
-      })
+        id,
+        state,
+        auth_token: 'abcdefg',
+      }),
     });
     this.fetchTools();
   }
@@ -52,8 +52,8 @@ export default class Admin extends React.Component {
         </thead>
         <tbody>
           {
-            this.state.tools.map((tool) => {
-              return <tr key={tool.id}>
+            this.state.tools.map((tool) => (
+              <tr key={tool.id}>
                 <td>{tool.title}</td>
                 <td>{tool.category}</td>
                 <td>{tool.description}</td>
@@ -61,10 +61,18 @@ export default class Admin extends React.Component {
                 <td>{tool.author}</td>
                 <td>{tool.author_link}</td>
                 <td>{tool.source_link}</td>
-                <td> <Button onClick={() => this.handleApprove(tool.id, "approved")}>Approve</Button></td>
-                <td> <Button onClick={() => this.handleApprove(tool.id, "rejected")}>Reject</Button></td>
+                <td>
+                  <Button onClick={() => this.handleApprove(tool.id, 'approved')}>
+                    Approve
+                  </Button>
+                </td>
+                <td>
+                  <Button onClick={() => this.handleApprove(tool.id, 'rejected')}>
+                    Reject
+                </Button>
+                </td>
               </tr>
-            })
+            ))
           }
         </tbody>
       </Table>

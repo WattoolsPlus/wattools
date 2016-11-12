@@ -3,17 +3,21 @@ from database import db
 from tools.models import Tool
 from tools.models import States
 
-main = Blueprint('main', __name__)
+main = Blueprint('main', __name__, static_folder='../client/dist/')
 api = Blueprint('api', __name__)
-
 
 ################################
 #               MAIN
 # ##############################
 @main.route('/')
+@main.route('/admin')
+@main.route('/submit')
 def home():
-    return "Hello Wattools!"
+    return main.send_static_file('index.html');
 
+@main.route('/bundle.js')
+def bundle():
+    return main.send_static_file('bundle.js');
 
 ################################
 #               API
