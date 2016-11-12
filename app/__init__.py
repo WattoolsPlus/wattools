@@ -1,5 +1,6 @@
 from flask import Flask
 from flask.json import JSONEncoder
+from flask_cors import CORS, cross_origin
 from app.routes import main
 from app.routes import api
 from app.database import db
@@ -22,6 +23,7 @@ class CustomJSONEncoder(JSONEncoder):
 
 def create_app(object_name):
     app = Flask(__name__)
+    CORS(app)
     app.json_encoder = CustomJSONEncoder
 
     app.config.from_object(object_name)
