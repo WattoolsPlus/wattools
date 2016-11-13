@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { browserHistory } from 'react-router';
 import { InputGroup, Button, FormControl, DropdownButton, MenuItem } from 'react-bootstrap';
 
 import './css/Searchbar.css';
@@ -50,7 +51,7 @@ export default class User extends React.Component {
           value={this.props.search}
         />
         <InputGroup.Button>
-          <Button bsStyle={'success'}>
+          <Button bsStyle={'success'} onClick={() => browserHistory.push('/submit')}>
             <span className={'glyphicon glyphicon-plus'} aria-hidden="true" /> Submit a Tool
           </Button>
         </InputGroup.Button>
