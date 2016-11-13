@@ -1,15 +1,6 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Grid, Button, ControlLabel, FormControl, FormGroup, HelpBlock, Checkbox, Radio } from 'react-bootstrap';
-
-function FieldGroup({ id, label, help, ...props }) {
-  return (
-    <FormGroup controlId={id}>
-      <ControlLabel>{label}</ControlLabel>
-      <FormControl {...props} />
-      {help && <HelpBlock>{help}</HelpBlock>}
-    </FormGroup>
-  );
-}
 
 export default class Submit extends React.Component {
   constructor(props) {
@@ -17,13 +8,42 @@ export default class Submit extends React.Component {
     this.state = {};
   }
 
+  handleSubmit(e) {
+    // stop page refresh
+    e.preventDefault();
+
+    var category = ReactDOM.findDOMNode(this.refs.category).value;
+    var title = ReactDOM.findDOMNode(this.refs.title).value;
+    var description = ReactDOM.findDOMNode(this.refs.description).value;
+    var author = ReactDOM.findDOMNode(this.refs.author).value;
+    var authorLink = ReactDOM.findDOMNode(this.refs.author_link).value;
+    var link = ReactDOM.findDOMNode(this.refs.link).value;
+    var sourceLink = ReactDOM.findDOMNode(this.refs.source_link).value;
+
+    fetch('http://wattools-stage.herokuapp.com/api/tool/', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        category: category,
+        title: title,
+        description: description,
+        author: author,
+        author_link: authorLink,
+        link: link,
+        source_link: sourceLink
+      })
+    }).then(() => alert('Tool uploaded for review!'));
+  }
+
   render() {
     return (
       <Grid style={{marginTop:"50px"}}>
-      <form>
+      <form onSubmit={this.handleSubmit.bind(this)}>
         <FormGroup controlId="formControlsSelect">
           <ControlLabel>Category</ControlLabel>
-          <FormControl componentClass="select">
+          <FormControl componentClass="select" ref="category">
             <option value="General">General</option>
             <option value="Course Selection">Course Selection</option>
             <option value="Jobmine">Jobmine</option>
@@ -34,44 +54,63 @@ export default class Submit extends React.Component {
             <option value="Developer-focused">Developer-focused</option>
           </FormControl>
         </FormGroup>
-        <FieldGroup
-          id="formControlsTitle"
-          type="text"
-          label="Title"
-          placeholder="Enter title"
-        />
-        <FieldGroup
-          id="formControlsDescription"
-          type="text"
-          label="Description"
-          placeholder="Enter description"
-        />
-        <FieldGroup
-          id="formControlsAuthor"
-          type="text"
-          label="Name of Author"
-          placeholder="Enter author's name"
-        />
-        <FieldGroup
-          id="formControlsAuthorLink"
-          type="url"
-          label="Link to Author's Website"
-          placeholder="Enter author's website link"
-        />
-        <FieldGroup
-          id="formControlsLink"
-          type="url"
-          label="Link to Project"
-          placeholder="Enter link to project"
-        />
-        <FieldGroup
-          id="formControlsSourceLink"
-          type="url"
-          label="Link to Project's Source Code"
-          placeholder="Enter link to project code"
-        />
+        <FormGroup controlId="formControlsTitle">
+          <ControlLabel>Title</ControlLabel>
+          <FormControl
+            id="formControlsTitle"
+            type="text"
+            label="Title"
+            placeholder="Enter title"
+            ref="title"
+          />
+        </FormGroup>
+        <FormGroup>
+          <ControlLabel>Description</ControlLabel>
+          <FormControl
+            id="formControlsDescription"
+            type="text"
+            placeholder="Enter description"
+            ref="description"
+          />
+        </FormGroup>
+        <FormGroup>
+          <ControlLabel>Name of Author</ControlLabel>
+          <FormControl
+            id="formControlsAuthor"
+            type="text"
+            placeholder="Enter author's name"
+            ref="author"
+          />
+        </FormGroup>
+        <FormGroup>
+          <ControlLabel>Link to Author's Website</ControlLabel>
+          <FormControl
+            id="formControlsAuthorLink"
+            type="url"
+            placeholder="Enter author's website link"
+            ref="author_link"
+          />
+        </FormGroup>
+        <FormGroup>
+          <ControlLabel>Link to Project</ControlLabel>
+          <FormControl
+            id="formControlsLink"
+            type="url"
+            placeholder="Enter link to project"
+            ref="link"
+          />
+        </FormGroup>
+        <FormGroup>
+          <ControlLabel>Link to Project's Source Code</ControlLabel>
+          <FormControl
+            id="formControlsSourceLink"
+            type="url"
+            placeholder="Enter link to project code"
+            ref="source_link"
+          />
+        </FormGroup>
         <Button type="submit">
-          Submit
+          Submit Tool
         </Button>
       </form>
       </Grid>
