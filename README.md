@@ -11,6 +11,7 @@ Wattools+
 source venv/bin/activate
 export WATTOOLS_ENV="development"
 export DATABASE_URL="postgresql://localhost/wattools_development"
+export ADMIN_PW=your_admin_password
 ```
 
 3. Make sure you have Python 2.7 and virtualenv installed on your local machine
@@ -33,7 +34,7 @@ export DATABASE_URL="postgresql://localhost/wattools_development"
 0. `cd` into the `client` folder
 1. run `npm install` to install the dependencies
 2. run `npm start` to start a dumb server to serve the frontend to `localhost:8080`
+3. run `npm run build` to build static html file and js file
 
 ### Linting
 This project uses `eslint` for its linting. Run `npm run lint .` to test the project's files. Setup your local linter to point to `.eslintrc.json` for the proper settings.
-

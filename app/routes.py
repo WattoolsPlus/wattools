@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request
+from flask import Flask, Blueprint, jsonify
 from database import db
 from tools.models import Tool
 from tools.models import States
@@ -28,7 +28,9 @@ def requires_auth(f):
         return f(*args, **kwargs)
     return decorated
 
-main = Blueprint('main', __name__, static_folder='../client/dist/')
+dirname=os.path.dirname
+static_assets_path = os.path.join(dirname(dirname(__file__)), os.path.join('client', 'dist'))
+main = Blueprint('main', __name__, static_folder=static_assets_path)
 api = Blueprint('api', __name__)
 
 ################################
@@ -37,6 +39,7 @@ api = Blueprint('api', __name__)
 @main.route('/')
 @main.route('/submit')
 def home():
+    print static_assets_path
     return main.send_static_file('index.html');
 
 @main.route('/admin')
@@ -47,6 +50,10 @@ def admin():
 @main.route('/bundle.js')
 def bundle():
     return main.send_static_file('bundle.js');
+
+@main.route('/test')
+def hello():
+    return "Hello World!"
 
 ################################
 #               API
