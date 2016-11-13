@@ -13,8 +13,6 @@ export default class Admin extends React.Component {
     fetch('http://wattools-stage.herokuapp.com/api/tools?state=pending')
       .then(response => response.json())
       .then(json => {
-        console.log('fetch done');
-        console.log(json.data);
         this.setState({ tools: json.data });
       });
   }
@@ -23,13 +21,13 @@ export default class Admin extends React.Component {
     fetch('http://wattools-stage.herokuapp.com/api/judge/', {
       method: 'post',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        id: id,
-        state: state,
-        auth_token: "abcdefg"
-      })
+        id,
+        state,
+        auth_token: 'abcdefg',
+      }),
     }).then(() => this.fetchTools());
   }
 
