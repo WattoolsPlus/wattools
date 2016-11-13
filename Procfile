@@ -1,1 +1,1 @@
-web: gunicorn manage:app --log-file -
+web: gunicorn --pythonpath server manage:app --log-file -

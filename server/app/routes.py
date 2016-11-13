@@ -29,7 +29,7 @@ def requires_auth(f):
     return decorated
 
 dirname=os.path.dirname
-static_assets_path = os.path.join(dirname(dirname(__file__)), os.path.join('client', 'dist'))
+static_assets_path = os.path.join(dirname(dirname(dirname(__file__))), os.path.join('client', 'dist'))
 main = Blueprint('main', __name__, static_folder=static_assets_path)
 api = Blueprint('api', __name__)
 
