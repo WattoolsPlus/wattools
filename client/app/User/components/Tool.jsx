@@ -42,7 +42,7 @@ export default class Tool extends React.Component {
     let sourceLink;
     if (this.props.source_link) {
       sourceLink = (
-        <Button href={this.props.source_link}>
+        <Button href={this.props.source_link} target="_blank" onClick={(e) => {e.stopPropagation();}}>
           <span className={'glyphicon glyphicon-file'} aria-hidden="true" /> Source
         </Button>
       );
@@ -51,7 +51,7 @@ export default class Tool extends React.Component {
     let authorLink;
     if (this.props.author_link) {
       authorLink = (
-        <Button href={this.props.author_link}>
+        <Button href={this.props.author_link} target="_blank" onClick={(e) => {e.stopPropagation();}}>
           <span className={'glyphicon glyphicon-user'} aria-hidden="true" /> Author
         </Button>
       );
@@ -69,7 +69,7 @@ export default class Tool extends React.Component {
             { author }
           </div>
           <div className={'pull-right btn-group tool-btn-group'}>
-            <Button href={this.props.link}>
+            <Button href={this.props.link} target="_blank" onClick={(e) => {e.stopPropagation();}}>
               <span className={'glyphicon glyphicon-link'} aria-hidden="true" /> Link
             </Button>
             { sourceLink }

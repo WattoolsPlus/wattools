@@ -4,7 +4,6 @@ import { Grid, Col, Row } from 'react-bootstrap';
 // import Sidebar from './Sidebar';
 import Searchbar from './Searchbar';
 import Tools from './Tools';
-
 import './css/Page.css';
 
 export default class Page extends React.Component {
