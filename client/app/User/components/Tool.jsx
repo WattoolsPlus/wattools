@@ -6,7 +6,7 @@ import './css/Tools.css';
 export default class Tool extends React.Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
+    author: PropTypes.string,
     author_link: PropTypes.string,
     quickDescription: PropTypes.string,
     description: PropTypes.string.isRequired,
@@ -40,7 +40,7 @@ export default class Tool extends React.Component {
         <div className={'container-fluid'}>
           <div className={'pull-left'}>
             <h3 className={'tool-title'}>{this.props.title}</h3>
-            <span> by {this.props.author}</span>
+            { this.props.author ? <span>by {this.props.author}</span> : ''}
           </div>
           <div className={'pull-right btn-group tool-btn-group'}>
             <Button href={this.props.link}>
