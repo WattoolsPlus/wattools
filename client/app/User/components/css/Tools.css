@@ -3,10 +3,23 @@
 }
 
 .tool-title {
-  margin: 10px 0 10px 0;
+  margin: 10px 0 4px 0;
   block: inline;
 }
 
 .tool-btn-group {
   margin: 10px 0 10px 0;
 }
+
+.tool-container {
+  margin: 5px 0px 35px 0px;
+}
+
+.tool-container:hover {
+  background-color: #f9f9f9;
+}
+
+.tool-footer {
+  margin: -7px 0 -7px 0;
+}
+

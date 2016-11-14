@@ -22,7 +22,7 @@ export default class Tool extends React.Component {
 
   render() {
     const footer = (
-      <div className={'text-center'}>
+      <div className={'text-center tool-footer'}>
         <span
           className={
             `glyphicon ${this.state.open ? 'glyphicon-chevron-up' : 'glyphicon-chevron-down'}`
@@ -59,6 +59,7 @@ export default class Tool extends React.Component {
 
     return (
       <Panel
+        className={'tool-container'}
         onClick={() => this.setState({ open: !this.state.open })}
         footer={footer}
       >
