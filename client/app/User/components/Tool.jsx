@@ -8,7 +8,7 @@ export default class Tool extends React.Component {
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     author_link: PropTypes.string,
-    quickDescription: PropTypes.string,
+    quick_description: PropTypes.string,
     description: PropTypes.string.isRequired,
     source_link: PropTypes.string,
     link: PropTypes.string.isRequired,
@@ -55,7 +55,7 @@ export default class Tool extends React.Component {
           </div>
         </div>
         <div className={'container-fluid'}>
-          <div>{this.props.quickDescription}</div>
+          <div>{this.props.quick_description}</div>
           <Collapse in={this.state.open}>
             <div>
               <Well className={'tool-well'}>
