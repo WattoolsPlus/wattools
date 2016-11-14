@@ -23,12 +23,12 @@ export default class User extends React.Component {
       'All',
       'General',
       'Course Selection',
-      'JobMine',
-      'Learn',
-      'GRT',
+      'Jobmine',
+      'D2L/Learn',
+      'GRT/Transit',
       'Class Helpers',
       'Guides',
-      'Developers',
+      'Developer-focused',
       'Dead',
     ];
 

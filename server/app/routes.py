@@ -1,10 +1,10 @@
-from flask import Flask, Blueprint, jsonify
+from flask import Blueprint, jsonify, request, Response
 from database import db
 from tools.models import Tool
 from tools.models import States
 from functools import wraps
-from flask import request, Response
 import os
+
 
 def check_auth(username, password):
     """This function is called to check if a username /
@@ -12,12 +12,14 @@ def check_auth(username, password):
     """
     return username == 'admin' and password == os.environ['ADMIN_PW']
 
+
 def authenticate():
     """Sends a 401 response that enables basic auth"""
     return Response(
-    'Could not verify your access level for that URL.\n'
-    'You have to login with proper credentials', 401,
-    {'WWW-Authenticate': 'Basic realm="Login Required"'})
+        'Could not verify your access level for that URL.\n'
+        'You have to login with proper credentials', 401,
+        {'WWW-Authenticate': 'Basic realm="Login Required"'})
+
 
 def requires_auth(f):
     @wraps(f)
@@ -28,43 +30,50 @@ def requires_auth(f):
         return f(*args, **kwargs)
     return decorated
 
-dirname=os.path.dirname
-static_assets_path = os.path.join(dirname(dirname(dirname(__file__))), os.path.join('client', 'dist'))
+dirname = os.path.dirname
+static_assets_path = os.path.join(
+    dirname(dirname(dirname(__file__))), os.path.join('client', 'dist'))
 main = Blueprint('main', __name__, static_folder=static_assets_path)
 api = Blueprint('api', __name__)
+
 
 ################################
 #               MAIN
 # ##############################
+
+
 @main.route('/')
 @main.route('/submit')
 def home():
     print static_assets_path
-    return main.send_static_file('index.html');
+    return main.send_static_file('index.html')
+
 
 @main.route('/admin')
 @requires_auth
 def admin():
-    return main.send_static_file('index.html');
+    return main.send_static_file('index.html')
+
 
 @main.route('/bundle.js')
 def bundle():
-    return main.send_static_file('bundle.js');
+    return main.send_static_file('bundle.js')
+
 
 @main.route('/test')
 def hello():
     return "Hello World!"
 
+
 ################################
 #               API
 # ##############################
+
+
 @api.route('/tools/')
 def get_tools():
-    state = request.args.get('state', None)
-    if state:
-        tools = Tool.query.filter_by(state=States(state)).all()
-    else:
-        tools = Tool.query.all()
+    state = request.args.get('state', States.APPROVED)
+    tools = Tool.query.filter_by(state=States(state)).all()
 
     return jsonify(
         data=[tool.serialize() for tool in tools]
