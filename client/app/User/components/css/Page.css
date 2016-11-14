@@ -1,0 +1,8 @@
+.page-top-padding {
+  padding-top: 35px;
+}
+
+.page-center-block {
+  display: flex;
+  justify-content: center;
+}

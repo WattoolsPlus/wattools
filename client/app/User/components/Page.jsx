@@ -19,13 +19,13 @@ export default class Page extends React.Component {
 
   render() {
     return (
-      <Grid className={'container'}>
-        <Row>
+      <Grid className={'container page-top-padding'}>
+        <Row className={'page-center-block'}>
           <Col md={9}>
             <h1 className={'text-center'}>WatTools</h1>
           </Col>
         </Row>
-        <Row>
+        <Row className={'page-center-block'}>
           <Col md={9}>
             <Searchbar
               category={this.state.selectedCategory}
@@ -35,7 +35,7 @@ export default class Page extends React.Component {
             />
           </Col>
         </Row>
-        <Row>
+        <Row className={'page-center-block'}>
           <Col md={9}>
             <Tools
               selectedCategory={this.state.selectedCategory}
@@ -43,7 +43,7 @@ export default class Page extends React.Component {
             />
           </Col>
         </Row>
-        <Row>
+        <Row className={'page-center-block'}>
           <Col md={9}>
             <a href={'https://github.com/WattoolsPlus/wattools'}>
               <h4 className={'text-center'}>
