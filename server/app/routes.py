@@ -4,7 +4,7 @@ from tools.models import Tool
 from tools.models import States
 from functools import wraps
 import os
-
+from textsum import FrequencySummarizer
 
 def check_auth(username, password):
     """This function is called to check if a username /
@@ -36,6 +36,8 @@ static_assets_path = os.path.join(
 main = Blueprint('main', __name__, static_folder=static_assets_path)
 api = Blueprint('api', __name__)
 
+# text summarizer
+fs = FrequencySummarizer()
 
 ################################
 #               MAIN
@@ -65,10 +67,26 @@ def hello():
     return "Hello World!"
 
 
+@main.route('/addqd')
+@requires_auth
+def add_quick_description():
+    # tools = Tool.query.filter_by(quick_description=None).all()
+    tools = Tool.query.all()
+    for tool in tools:
+        description = tool.description
+        quick_description = fs.summarize(description, 1)
+        if quick_description is not None and len(quick_description) > 0:
+            quick_description = quick_description[0]
+        else:
+            quick_description = None
+        print description, quick_description
+        tool.quick_description = quick_description
+    db.session.commit()
+    return "Successfully added quick description"
+
 ################################
 #               API
 # ##############################
-
 
 @api.route('/tools/')
 def get_tools():
@@ -85,8 +103,10 @@ def create_tool():
     data = request.get_json()
 
     try:
+        quick_description = fs.summarize(data['description'], 1)
         tool = Tool(
             title=data['title'],
+            quick_description=quick_description,
             description=data['description'],
             author=data.get('author', None),
             author_link=data.get('author_link', None),

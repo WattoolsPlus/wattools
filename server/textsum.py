@@ -53,6 +53,8 @@ class FrequencySummarizer:
     sents = sent_tokenize(text)
     if len(sents) < 1:
       return None
+    elif len(sents) == 1:
+      return [text]
     assert n <= len(sents)
     word_sent = [word_tokenize(s.lower()) for s in sents]
     self._freq = self._compute_frequencies(word_sent)
